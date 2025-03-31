@@ -18,6 +18,9 @@ This project is a dynamic Countdown Timer that tracks the number of days, hours,
   HTML5 - Structure of the countdown
   
   CSS3 - Styling and design
-  
+  [
   JavaScript (Vanilla JS) - Countdown logic and DOM manipulation
+
+## 🚀 **Live Demo**
+🔗 [Check it out here!](https://amarmaurya-com.github.io/MilestoneMeter/)
 
