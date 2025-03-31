@@ -1,5 +1,5 @@
 # CountDown
-This project is a dynamic Countdown Timer that tracks the number of days, hours, minutes, and seconds from your coding journey start date (5 June 2024). It also includes a progress bar to visualize the elapsed time.
+This project is a dynamic Countdown Timer that tracks the number of days, hours, minutes, and seconds of my coding journey which was start on 5 June 2024. It also includes a progress bar to visualize the elapsed time.
 
 🎯 Features
   ✅ Real-time countdown with automatic updates every second.
@@ -15,10 +15,8 @@ This project is a dynamic Countdown Timer that tracks the number of days, hours,
   ✅ Displays a custom message when the timer is completed.
 
 📝 Technologies Used
-  HTML5 - Structure of the countdown
-  
-  CSS3 - Styling and design
-  [
+  HTML5 
+  CSS3
   JavaScript (Vanilla JS) - Countdown logic and DOM manipulation
 
 ## 🚀 **Live Demo**
