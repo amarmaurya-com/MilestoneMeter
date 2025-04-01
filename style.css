@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Boldonse&family=Gravitas+One&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Gravitas+One&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Boldonse&family=Dancing+Script:wght@400..700&family=Gravitas+One&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 body{
     background: url('https://wallpaper.dog/large/20567146.png');
     background-size: cover; 
@@ -9,23 +10,27 @@ body{
     justify-content: center;
     align-items: center;
     height: 90vh;
-    
-    font-family: 'Martel Sans', sans-serif;
+    /* font-family: "Big Shoulders Stencil", sans-serif; */
 }
 h1{
+    font-family: "Tektur", sans-serif;
     font-size: 5vw;
     margin: 0 auto;
-    color: rgb(117, 122, 115);
+    /* color: rgb(117, 122, 115); */
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 23, 2); 
 }
 h2{
-    font-size: 20px;
+    font-size: 2vw;
     margin: 0 auto;
+    color: transparent;
+    -webkit-text-stroke: 0.9px rgb(3, 159, 18); 
 }
 .container{
     height: 60vh;
     width: 60vw;
     margin: 0 auto; 
-    background-color:  rgba(47, 36, 36, 0.288);
+    background-color: rgba(47, 36, 36, 0.288);
     /* padding: 20vh 3.5vw; */
     border-radius: 10px; 
     display: flex;
@@ -42,19 +47,24 @@ h2{
 
 #countdown div{
     text-align: center;
-    font-family: "Martel Sans", sans-serif;
     /* width: 10vw; */
     height: 10vh;
+    font-family: "Dancing Script", cursive;
+    font-size: 1rem;
+    
 }
+
 
 #countdown div span{
     text-align: center;
     padding: 1.4vh 1.5vw;
-    background: rgb(211, 220, 243);
+    background: rgb(3, 3, 3);
     border-radius:4px;    
-    color: black;
+    color: rgb(183, 0, 255);
     font-weight: bold;
     display: flex;
+    /* font-family: "Tektur", sans-serif; */
+    font-family: "Big Shoulders Stencil", sans-serif;
     flex-direction: column;
 }
 #progress-bar{
