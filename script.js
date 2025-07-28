@@ -1,5 +1,3 @@
-console.log("Here we go!");
-
 const startDate = new Date("June 5, 2024 00:00:00").getTime();
 const endDate = new Date("June 5, 2025 00:00:00").getTime();
 
@@ -11,48 +9,54 @@ const secEl = document.getElementById("sec");
 const progressEl = document.getElementById("progress");
 const percentTextEl = document.getElementById("percent-text");
 
-function padZero(num) {
-    return num < 10 ? "0" + num : num;
+function padZero(n) {
+  return n < 10 ? "0" + n : n;
 }
 
 function updateCountdown() {
-    const now = new Date().getTime();
-    const completed = now - startDate;
+  const now = new Date().getTime();
+  const elapsed = now - startDate;
+  const duration = endDate - startDate;
 
-    if (completed < 0) {
-        document.getElementById("countdown").innerHTML = "Starts in " + Math.abs(Math.floor(completed / 86400000)) + " days";
-        progressEl.value = 0;
-        percentTextEl.innerText = `0%`;
-        return;
-    }
+  if (elapsed <= 0) {
+    yearEl.innerText = "00";
+    daysEl.innerText = "00";
+    hoursEl.innerText = "00";
+    minEl.innerText = "00";
+    secEl.innerText = "00";
+    progressEl.value = 0;
+    percentTextEl.innerText = "0%";
+    return;
+  }
 
-    const days = Math.floor(completed / 86400000);
-    const years = Math.floor(days / 365);
-    const hours = Math.floor(completed % 86400000 / (60 * 60 * 1000));
-    const minutes = Math.floor(completed % (60 * 60 * 1000) / (60 * 1000));
-    const seconds = Math.floor(completed % (60 * 1000) / 1000);
+  const percent = (elapsed / duration) * 100;
+  const totalDays = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+  const years = Math.floor(totalDays / 365);
+  const days = totalDays % 365;
+  const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
+  const seconds = Math.floor((elapsed / 1000) % 60);
 
-    yearEl.innerHTML = padZero(years);
-    daysEl.innerHTML = padZero(days);
-    hoursEl.innerHTML = padZero(hours);
-    minEl.innerHTML = padZero(minutes);
-    secEl.innerHTML = padZero(seconds);
+  yearEl.innerText = padZero(years);
+  daysEl.innerText = padZero(days);
+  hoursEl.innerText = padZero(hours);
+  minEl.innerText = padZero(minutes);
+  secEl.innerText = padZero(seconds);
 
-    document.querySelector("h2").innerText = `Going On: ${years}y ${days % 365}d ${hours}h ${minutes}m ${seconds}s`;
+  progressEl.value = percent.toFixed(2);
+  percentTextEl.innerText = percent.toFixed(1) + "%";
 
-    const totalDuration = endDate - startDate;
-    const percentCompleted = ((now - startDate) / totalDuration) * 100;
-    progressEl.value = percentCompleted.toFixed(2);
-    percentTextEl.innerText = `${percentCompleted.toFixed(1)}%`;
-
-    if (percentCompleted > 80) {
-        progressEl.style.background = "#ff0000"; // red
-    } else if (percentCompleted > 50) {
-        progressEl.style.background = "#ff9900"; // orange
-    } else {
-        progressEl.style.background = "#00cc00"; // green
-    }
+  // Change color based on progress
+  if (percent >= 100) {
+    progressEl.style.background = "#0000ff";
+  } else if (percent > 80) {
+    progressEl.style.background = "#ff0000";
+  } else if (percent > 50) {
+    progressEl.style.background = "#ff9900";
+  } else {
+    progressEl.style.background = "#00cc00";
+  }
 }
 
 setInterval(updateCountdown, 1000);
-updateCountdown(); // initial call
+updateCountdown(); // Run once on load
